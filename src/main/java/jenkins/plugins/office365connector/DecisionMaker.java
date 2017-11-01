@@ -51,7 +51,7 @@ public class DecisionMaker {
      * @return <code>true</code> if at least one macro has matched, <code>false</code> otherwise
      */
     public boolean isAtLeastOneRuleMatched(Webhook webhook) {
-        if (webhook.getMacros().isEmpty()) {
+        if (webhook.getMacros() == null || webhook.getMacros().isEmpty()) {
             return true;
         } else {
             for (Macro macro : webhook.getMacros()) {
